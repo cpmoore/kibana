@@ -53,6 +53,17 @@ export function getRolesBreadcrumbs() {
   ];
 }
 
+export function getRoleMappingBreadcrumbs() {
+  return [
+    MANAGEMENT_BREADCRUMB,
+    {
+      text: i18n.translate('xpack.security.role_mappings.breadcrumb', {
+        defaultMessage: 'Role Mapping',
+      }),
+      href: '#/management/security/role_mapping',
+    },
+  ];
+}
 export function getEditRoleBreadcrumbs($route: Record<string, any>) {
   const { name } = $route.current.params;
   return [
@@ -64,11 +75,33 @@ export function getEditRoleBreadcrumbs($route: Record<string, any>) {
   ];
 }
 
+export function getEditRoleMappingBreadcrumbs($route: Record<string, any>) {
+  const { roleMappingName } = $route.current.params;
+  return [
+    ...getRoleMappingBreadcrumbs(),
+    {
+      text: roleMappingName,
+      href: `#/management/security/role_mapping/edit/${roleMappingName}`,
+    },
+  ];
+}
+
 export function getCreateRoleBreadcrumbs() {
+  return [
+    ...getRoleMappingBreadcrumbs(),
+    {
+      text: i18n.translate('xpack.security.roles.createBreadcrumb', {
+        defaultMessage: 'Create',
+      }),
+    },
+  ];
+}
+
+export function getCreateRoleMappingBreadcrumbs() {
   return [
     ...getUsersBreadcrumbs(),
     {
-      text: i18n.translate('xpack.security.roles.createBreadcrumb', {
+      text: i18n.translate('xpack.security.role_mappings.createBreadcrumb', {
         defaultMessage: 'Create',
       }),
     },

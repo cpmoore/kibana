@@ -10,3 +10,5 @@ export const ROLES_PATH = `${SECURITY_PATH}/roles`;
 export const EDIT_ROLES_PATH = `${ROLES_PATH}/edit`;
 export const USERS_PATH = `${SECURITY_PATH}/users`;
 export const EDIT_USERS_PATH = `${USERS_PATH}/edit`;
+export const ROLE_MAPPING_PATH = `${SECURITY_PATH}/role_mapping`;
+export const EDIT_ROLE_MAPPING_PATH = `${ROLE_MAPPING_PATH}/edit`;

@@ -103,12 +103,12 @@ export function ensureEsVersion(server, kibanaVersion) {
       }
 
       if (incompatibleNodes.length) {
-        const incompatibleNodeNames = getHumanizedNodeNames(incompatibleNodes);
-        throw new Error(
-          `This version of Kibana requires Elasticsearch v` +
-        `${kibanaVersion} on all nodes. I found ` +
-        `the following incompatible nodes in your cluster: ${incompatibleNodeNames.join(', ')}`
-        );
+        // const incompatibleNodeNames = getHumanizedNodeNames(incompatibleNodes);
+        // throw new Error(
+        //   `This version of Kibana requires Elasticsearch v` +
+        // `${kibanaVersion} on all nodes. I found ` +
+        // `the following incompatible nodes in your cluster: ${incompatibleNodeNames.join(', ')}`
+        // );
       }
 
       return true;

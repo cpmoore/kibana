@@ -5,6 +5,7 @@
  */
 
 export { Role, RoleIndexPrivilege, RoleKibanaPrivilege } from './role';
+export { RoleMapping } from './role_mapping';
 export { FeaturesPrivileges } from './features_privileges';
 export { RawKibanaPrivileges, RawKibanaFeaturePrivileges } from './raw_kibana_privileges';
 export { KibanaPrivileges } from './kibana_privileges';

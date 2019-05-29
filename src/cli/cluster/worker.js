@@ -95,8 +95,9 @@ export default class Worker extends EventEmitter {
 
   onChange(path) {
     if (!this.watch) return;
+    clearTimeout(this.restartTimer);
     this.changes.push(path);
-    this.start();
+    this.restartTimer = setTimeout(() => {this.start();}, 1000);
   }
 
   async shutdown() {

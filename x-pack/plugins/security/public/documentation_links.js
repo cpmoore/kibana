@@ -12,5 +12,5 @@ export const documentationLinks = {
   dashboardViewMode: `${ELASTIC_WEBSITE_URL}guide/en/kibana/${DOC_LINK_VERSION}/xpack-view-modes.html`,
   esClusterPrivileges: `${STACK_OVERVIEW_URL}/security-privileges.html#privileges-list-cluster`,
   esIndicesPrivileges: `${STACK_OVERVIEW_URL}/security-privileges.html#privileges-list-indices`,
-  esRunAsPrivileges: `${STACK_OVERVIEW_URL}/security-privileges.html#_run_as_privilege`,
+  roleMapping: `${STACK_OVERVIEW_URL}/mapping-roles.html`,
 };

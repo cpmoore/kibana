@@ -109,7 +109,7 @@
     });
 
     /**
-     * Perform a [shield.deleteRole](Remove a role from the native shield realm) request
+     * Perform a [shield.deleteRoleMapping](Remove a role from the native shield realm) request
      *
      * @param {Object} params - An object with parameters used to carry out this action
      * @param {Boolean} params.refresh - Refresh the index after performing the operation
@@ -123,6 +123,32 @@
       },
       url: {
         fmt: '/_security/role/<%=name%>',
+        req: {
+          name: {
+            type: 'string',
+            required: true
+          }
+        }
+      },
+      method: 'DELETE'
+    });
+
+
+    /**
+     * Perform a [shield.deleteRoleMapping](Remove a role mapping from the native shield realm) request
+     *
+     * @param {Object} params - An object with parameters used to carry out this action
+     * @param {Boolean} params.refresh - Refresh the index after performing the operation
+     * @param {String} params.name - Role name
+     */
+    shield.deleteRoleMapping = ca({
+      params: {
+        refresh: {
+          type: 'boolean'
+        }
+      },
+      url: {
+        fmt: '/_security/role_mapping/<%=name%>',
         req: {
           name: {
             type: 'string',
@@ -183,6 +209,30 @@
     });
 
     /**
+     * Perform a [shield.getRoleMapping](Retrieve one or more role mappings from the native shield realm) request
+     *
+     * @param {Object} params - An object with parameters used to carry out this action
+     * @param {String} params.name - Role mapping name
+     */
+    shield.getRoleMapping = ca({
+      params: {},
+      urls: [
+        {
+          fmt: '/_security/role_mapping/<%=name%>',
+          req: {
+            name: {
+              type: 'string',
+              required: false
+            }
+          }
+        },
+        {
+          fmt: '/_security/role_mapping'
+        }
+      ]
+    });
+
+    /**
      * Perform a [shield.getUser](Retrieve one or more users from the native shield realm) request
      *
      * @param {Object} params - An object with parameters used to carry out this action
@@ -221,6 +271,34 @@
       },
       url: {
         fmt: '/_security/role/<%=name%>',
+        req: {
+          name: {
+            type: 'string',
+            required: true
+          }
+        }
+      },
+      needBody: true,
+      method: 'PUT'
+    });
+
+
+
+    /**
+     * Perform a [shield.putRoleMapping](Update or create a role mapping for the native shield realm) request
+     *
+     * @param {Object} params - An object with parameters used to carry out this action
+     * @param {Boolean} params.refresh - Refresh the index after performing the operation
+     * @param {String} params.name - Role name
+     */
+    shield.putRoleMapping = ca({
+      params: {
+        refresh: {
+          type: 'boolean'
+        }
+      },
+      url: {
+        fmt: '/_security/role_mapping/<%=name%>',
         req: {
           name: {
             type: 'string',

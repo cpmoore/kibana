@@ -9,6 +9,7 @@ import { getUserProvider } from './server/lib/get_user';
 import { initAuthenticateApi } from './server/routes/api/v1/authenticate';
 import { initUsersApi } from './server/routes/api/v1/users';
 import { initExternalRolesApi } from './server/routes/api/external/roles';
+import { initExternalRoleMappingApi } from './server/routes/api/external/role_mappings';
 import { initPrivilegesApi } from './server/routes/api/external/privileges';
 import { initIndicesApi } from './server/routes/api/v1/indices';
 import { initOverwrittenSessionView } from './server/routes/views/overwritten_session';
@@ -213,6 +214,7 @@ export const security = (kibana) => new kibana.Plugin({
     initAppAuthorization(server, xpackMainPlugin, authorization);
     initUsersApi(server);
     initExternalRolesApi(server);
+    initExternalRoleMappingApi(server);
     initIndicesApi(server);
     initPrivilegesApi(server);
     initLoginView(server, xpackMainPlugin);

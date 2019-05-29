@@ -8,12 +8,14 @@ import 'plugins/security/views/management/change_password_form/change_password_f
 import 'plugins/security/views/management/password_form/password_form';
 import 'plugins/security/views/management/users_grid/users';
 import 'plugins/security/views/management/roles_grid/roles';
+import 'plugins/security/views/management/role_mapping_grid/role_mapping';
 import 'plugins/security/views/management/edit_user/edit_user';
 import 'plugins/security/views/management/edit_role/index';
+import 'plugins/security/views/management/edit_role_mapping/edit_role_mapping';
 import routes from 'ui/routes';
 import { XPackInfoProvider } from 'plugins/xpack_main/services/xpack_info';
 import '../../services/shield_user';
-import { ROLES_PATH, USERS_PATH } from './management_urls';
+import { ROLE_MAPPING_PATH, ROLES_PATH, USERS_PATH } from './management_urls';
 
 import { management } from 'ui/management';
 import { i18n } from '@kbn/i18n';
@@ -64,6 +66,20 @@ routes.defaults(/\/management/, {
             url: `#${ROLES_PATH}`,
           });
         }
+
+
+        if (!security.hasItem('role_mapping')) {
+          security.register('role_mapping', {
+            name: 'securityRoleMappingLink',
+            order: 30,
+            display: i18n.translate(
+              'xpack.security.management.roleMappingsTitle', {
+                defaultMessage: 'Role Mappings',
+              }),
+            url: `#${ROLE_MAPPING_PATH}`,
+          });
+        }
+
       }
 
       if (!showSecurityLinks) {
