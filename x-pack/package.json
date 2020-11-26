@@ -304,7 +304,7 @@
     "react-select": "^1.2.1",
     "react-shortcuts": "^2.0.0",
     "react-sticky": "^6.0.3",
-    "react-syntax-highlighter": "^5.7.0",
+    "react-syntax-highlighter": "^13.0.0",
     "react-vis": "^1.8.1",
     "recompose": "^0.26.0",
     "reduce-reducers": "^0.4.3",
