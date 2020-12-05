@@ -206,7 +206,7 @@
     "querystring-browser": "1.0.4",
     "raw-loader": "0.5.1",
     "react": "^16.8.0",
-    "react-addons-shallow-compare": "15.6.2",
+    "react-addons-shallow-compare": "15.6.3",
     "react-color": "^2.13.8",
     "react-dom": "^16.8.0",
     "react-grid-layout": "^0.16.2",
